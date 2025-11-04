@@ -3,4 +3,5 @@ class Flashcard {
   final String answer;
 
   Flashcard({required this.question, required this.answer});
+
 }
