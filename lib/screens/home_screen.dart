@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           'Flashy!',
           style: TextStyle(
-            color: Color(0xFF9B87F5), // Purple color
+            color: Color(0xFF9B87F5),
             fontWeight: FontWeight.w700,
             fontSize: 24,
           ),
@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: LinearProgressIndicator(
               value: (_currentIndex + 1) / flashcards.length,
               backgroundColor: Colors.grey[300],
-              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF5AC8FA)), // Blue color
+              valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF5AC8FA)),
               borderRadius: BorderRadius.circular(10),
             ),
           ),
@@ -51,16 +51,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
           // Flashcard
           Expanded(
-            child: FlashcardWidget(flashcard: flashcards[_currentIndex]),
+            child: AnimatedSwitcher(
+              duration: const Duration(milliseconds: 500),
+              child: FlashcardWidget(
+                key: ValueKey<int>(_currentIndex),
+                flashcard: flashcards[_currentIndex],
+              ),
+            ),
           ),
 
-          // Navigation buttons with arrows
+          // Navigation buttons - CENTERED under flashcard
           Padding(
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.all(24),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center, // Center the buttons
               children: [
-                // Previous Button with Arrow
+                // Previous Button
                 FloatingActionButton(
                   onPressed: _currentIndex > 0
                       ? () {
@@ -69,13 +75,17 @@ class _HomeScreenState extends State<HomeScreen> {
                     });
                   }
                       : null,
-                  backgroundColor: Color(0xFF5AC8FA), // Blue color
+                  backgroundColor: _currentIndex > 0
+                      ? Color(0xFF5AC8FA)
+                      : Colors.grey[400],
                   foregroundColor: Colors.white,
                   child: Icon(Icons.arrow_back),
                   elevation: 4,
                 ),
 
-                // Next Button with Arrow
+                SizedBox(width: 40), // Space between buttons
+
+                // Next Button
                 FloatingActionButton(
                   onPressed: _currentIndex < flashcards.length - 1
                       ? () {
@@ -84,7 +94,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     });
                   }
                       : null,
-                  backgroundColor: Color(0xFF5AC8FA), // Blue color
+                  backgroundColor: _currentIndex < flashcards.length - 1
+                      ? Color(0xFF5AC8FA)
+                      : Colors.grey[400],
                   foregroundColor: Colors.white,
                   child: Icon(Icons.arrow_forward),
                   elevation: 4,

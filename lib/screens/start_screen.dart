@@ -70,7 +70,7 @@ class _StartScreenState extends State<StartScreen> {
 
             // App Title
             Text(
-              'Flashy!',
+              'Flashy',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
