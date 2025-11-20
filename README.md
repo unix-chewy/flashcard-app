@@ -69,3 +69,19 @@ navigation buttons.
 - The linear progress bar reflects your current position through the deck.
 - The app automatically resets the flashcard to front when moving through cards.
 
+## Reflections of the Developers:
+
+### NAGUIT, Kyle Chester P.
+One of the most significant challenges encountered during the development of Flashy
+was the enhancement of its user interface. Initially, the group planned to create 
+a simple static application that displays a single question with a 'Show Answer'
+button. However, this concept was too simplistic and likely to result in a poor
+user experience.
+
+To address this, the design was revised to be more visually appealing with a
+minimalist approach. The new plan involved creating a user interface where each
+question is presented on a flashcard. The 'Show Answer' button was replaced with a
+GestureDetector widget, enabling the user to flip the card with a touch gesture. To
+implement this flashcard design, several widgets were used. Among these are the Card
+widget for the flashcard's surface, FadeTransition to create a smoother UI, and a
+LinearProgressIndicator to display the user's study progress.
