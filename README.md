@@ -85,3 +85,7 @@ GestureDetector widget, enabling the user to flip the card with a touch gesture.
 implement this flashcard design, several widgets were used. Among these are the Card
 widget for the flashcard's surface, FadeTransition to create a smoother UI, and a
 LinearProgressIndicator to display the user's study progress.
+
+### Sunga, Joney B.
+
+Based on my experience during the development hpase, I noticed that the app had a very simple flashcard system. It was basic, flat animations-when a card flipped, and there were no transitions between the flash screen and the main application. While the functionality worked, the overall experience felt plain and souless for me. As I continued working on this project, I realized the importance of creating a more seamless and engaging user experience. Throughout the project, I added transitions to make navigation feel more natural and polished. I also improved the card-flipping animations to give the app a more dynamic feel. Lastly, I also revisited the user interface, making short adjustments to ensure that the final design was more visually appealing and user-friendly. This improvements not only enhanced the app's usability but also helped it feel more complete.
